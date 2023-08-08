@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #C77DFF;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #28666e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .blog-post {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .blog-post h2 {
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .blog-post p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <h1>Annapurna Base Camp Trek</h1>
+    </header> -->
+    {{#each blogposts}}
+            <div class="blog-post">
+                <h1>{{title}}</h1>
+                <img src="../uploads/photos/{{image}}" alt="Blog Post Image">
+                <h3>{{subtitle}}</h3>
+                <p>
+                    {{description}}
+                </p>
+                <p>
+                    {{conclusion}}
+                </p>
+                 <p>
+                    {{note}}
+                </p>
+                <!-- Add more paragraphs to reach around 1000 words -->
+            </div>
+
+    {{/each}}
+</body>
+
+</html>

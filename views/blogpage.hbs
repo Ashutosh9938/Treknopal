@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blogs</title>
+    <link rel="stylesheet" href="blogpage.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <section class="articles">
+            {{#each blogposts}}
+                <article>
+                    <div class="article-wrapper">
+                        <figure>
+                            <img src="../uploads/photos/{{image}}" alt="" />
+                        </figure>
+                        <div class="article-body">
+                            <h2>{{title}}</h2>
+                            <p>
+                                <p class="hehe">{{description}}</p>
+                            </p>
+                                <form action="/viewmore" method="post">
+                                    <input 
+                                        type = "text" 
+                                        name = "id" 
+                                        value="{{id}}"      
+                                        hidden
+                                    />
+                                    <button type = "submit" value = "Read More">View More</button>
+                                </form>
+
+                        </div>
+                    </div>
+                </article>
+            {{/each}}
+        </section>
+    </div>
+    <script>
+            window.onload = function () {
+                    const paragraphs = document.getElementsByClassName('hehe');
+                    for (let i = 0; i < paragraphs.length; i++) {
+                        const paragraph = paragraphs[i];
+                        const text = paragraph.textContent;
+                        if (text.length > 100) {
+                            paragraph.textContent = text.slice(0, 100) + '...';
+                        }
+                    }
+                };
+    </script>
+</body>
+
+</html>
